@@ -9,27 +9,67 @@
 
   </head>
   <body>
-    <h1>FastLED XY Map Generator</h1>
-    <p>by Garrett Mace (macetech.com), inspired by Mark Kriegsman</p>
-    <p>Code: <a href="https://github.com/macetech/FastLED-XY-Map-Generator">https://github.com/macetech/FastLED-XY-Map-Generator</a>
-    <h3>Automatically generates XYmap function for irregular/gapped LED arrays.</h3>
-    <p>Set the maximum x and y dimensions, layout style (how the LEDs are actually wired), and click Rebuild.</p>
-    <p>Then click LEDs to edit the shape of the array by enabling and disabling pixels. The code is updated in realtime.</p>
-    <p>Copy the resulting function and paste into your code.</p>
-    <p>The function will map ordinary X-Y coordinates to the irregular array, preserving pixels that land in gaps.</p>
+    <header>
+      <h1>FastLED XY Map Generator</h1>
+    </header>
+        
+   
+    <article class="main">
+      <nav>
+        <span>i</span>
+      </nav>
+      <h3>Automatically generates XYmap function for irregular/gapped LED arrays.</h3>
+      <p>Set the maximum x and y dimensions, layout style (how the LEDs are actually wired), and click Rebuild.</p>
+      <p>Then click LEDs to edit the shape of the array by enabling and disabling pixels. The code is updated in realtime.</p>
+      <p>Copy the resulting function and paste into your code.</p>
+      <p>The function will map ordinary X-Y coordinates to the irregular array, preserving pixels that land in gaps.</p>
+    </article>
+    
 
-    <div class="controls">
-      <input type="checkbox" id="serpentineCHK" onchange="serpentineLayout(this)" checked>Serpentine</input>
-      <input type="checkbox" id="verticalCHK" onchange="verticalLayout(this)">Vertical</input><br>
-      <input type="checkbox" id="vflipCHK" onchange="vflipLayout(this)">V-Flip</input>
-      <input type="checkbox" id="hflipCHK" onchange="hflipLayout(this)">H-Flip</input><br>
-      <br>
-      <div class="inputBox"><label class="inputText">Width</label><input id="xdim" type="number" name="xdim" min="1" value="16"/></div>
-      <div class="inputBox"><label class="inputText">Height</label><input id="ydim" type="number" name="ydim" min="1" value="5"/></div>
-    </div>
-      <button id="rebuildArray" onclick="buildGrid()">Rebuild</button>
+    <article class="container">
+      <div class="controls">
+        <div class="inputBox">
+          Width
+          <label class="inputText">
+            <input id="xdim" inputmode="numeric" type="text" name="xdim" min="1" value="16" placeholder="Width" />
+          </label>
+        </div>
+        <div class="inputBox">
+          Height
+          <label class="inputText">
+            <input id="ydim" inputmode="numeric" type="text" name="ydim" min="1" value="5" placeholder="Height" />
+          </label>
+        </div>
+        <div class="inputBox">
+          <label class="inputText">
+            <input type="checkbox" id="serpentineCHK" onchange="serpentineLayout(this)" checked>Serpentine</input>
+          </label>
+        </div>
+        <div class="inputBox">
+          <label class="inputText">
+            <input type="checkbox" id="verticalCHK" onchange="verticalLayout(this)">Vertical</input>
+          </label>
+        </div>
+        <div class="inputBox">
+          <label class="inputText">
+            <input type="checkbox" id="vflipCHK" onchange="vflipLayout(this)">V-Flip</input>
+          </label>
+        </div>
+        <div class="inputBox">
+          <label class="inputText">
+            <input type="checkbox" id="hflipCHK" onchange="hflipLayout(this)">H-Flip</input>
+          </label>
+        </div> 
+        <button id="rebuildArray" onclick="buildGrid()">Rebuild</button>
+      </div>
+    
 
-    <div id="ledgrid"></div>
-    <div id="result">Map goes here.</div>
+      <div id="ledgrid"></div>
+      <div id="result">Map goes here.</div>
+    </article>
+    <footer>
+      <p>by Garrett Mace (macetech.com), inspired by Mark Kriegsman</p>
+      <p>Code: <a href="https://github.com/macetech/FastLED-XY-Map-Generator">https://github.com/macetech/FastLED-XY-Map-Generator</a></p>
+    </footer>
   </body>
 </html>
